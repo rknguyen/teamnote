@@ -1,0 +1,29 @@
+name: build template
+on: [push]
+
+jobs:
+  build:
+    name: build and update template
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: set up Python 3.6.9
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.6.9
+    - name: install pdflatex
+      run: sudo apt-get install texlive-latex-base texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra
+    - name: build template
+      run: |
+        cd atl
+        python gen.py
+        cd ..
+    - name: update temp.pdf
+      uses: EndBug/add-and-commit@v5
+      with:
+        author_name: rknguyen
+        author_email: nmhuy12@gmail.com
+        message: "feat: build and update temp.pdf"
+        add: 'atl/temp.pdf'
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
