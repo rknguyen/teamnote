@@ -18,12 +18,12 @@ jobs:
         cd atl
         python gen.py
         cd ..
-    - name: update temp.pdf
-      uses: EndBug/add-and-commit@v5
-      with:
-        author_name: rknguyen
-        author_email: nmhuy12@gmail.com
-        message: "feat: build and update temp.pdf"
-        add: 'atl/temp.pdf'
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: setup git config
+      run: |
+        git config user.name "GitHub Actions Bot"
+        git config user.email "<>"
+    - name: commit file
+      run: |
+        git add atl/temp.pdf
+        git commit -m "update temp.pdf"
+        git push origin master
