@@ -4,26 +4,26 @@ string minmove(string s)
 	int n=s.length();
 	int x, y, i, j, u, v;
 	for (x=0,y=1; y<n; y++)
-  {
+ 	{
 		i=u=x;
 		j=v=y;
 		while (s[i]==s[j])
-    {
+    		{
 			u++, v++, i++, j++;
 			if (i==n)
-        i=0;
+        			i=0;
 			if (j==n)
-        j=0;
+        			j=0;
 			if (i==x)
-        break;
+        			break;
 		}
 		if (s[i]<=s[j])
-      y=v;
+      			y=v;
 		else
-    {
+    		{
 			x=y;
 			if (u>y)
-        y=u;
+        		y=u;
 		}
 	}
   string ans="";
