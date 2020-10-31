@@ -1,3 +1,4 @@
+//Chia xâu con S thành những xâu con có thứ tự từ điển nhỏ nhất dpt O(n)
 void lyndon(string s)
 {
 	int n=s.length();
