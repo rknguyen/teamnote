@@ -1,7 +1,4 @@
-#include <bits/stdc++.h>
-using namespace std;
-
-int lps[10000003];
+//Hàm này trả về vị trí bắt đầu của những string b trong string a
 void kmp(string a,string b)
 {
   int n=a.length();
@@ -50,11 +47,4 @@ void kmp(string a,string b)
     if (i>=n)
       break;
   }
-}
-
-string st1,st2;
-int main()
-{
-  cin>>st1>>st2;
-  kmp(st1,st2);
 }
