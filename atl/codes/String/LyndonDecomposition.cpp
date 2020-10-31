@@ -1,6 +1,3 @@
-#include <bits/stdc++.h>
-using namespace std;
-
 void lyndon(string s)
 {
 	int n=s.length();
@@ -24,11 +21,4 @@ void lyndon(string s)
 		}
 	}
 	cout<<endl;
-}
-
-string st;
-int main()
-{
-	cin>>st;
-	lyndon(st);
 }
