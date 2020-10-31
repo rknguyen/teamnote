@@ -1,6 +1,4 @@
-#include <bits/stdc++.h>
-using namespace std;
-
+//Hàm trả về xâu đối xứng dài nhất liên tiếp trong S dpt O(n)
 int manacher(string s)
 {
 	int n=s.size()*2-1;
@@ -32,11 +30,4 @@ int manacher(string s)
 		}
 	}
 	return res;
-}
-
-string st;
-int main()
-{
-  cin>>st;
-  cout<<manacher(st);
 }
